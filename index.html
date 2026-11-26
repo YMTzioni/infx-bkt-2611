@@ -65,16 +65,14 @@ footer{color:var(--mute);font-size:13px;text-align:center;margin-top:40px}
 <!-- intro -->
 <section id="intro">
   <h1>מבחן בקיאות: <em>ביטוח רכוש ותאונות</em></h1>
-  <p class="lead">תודה על השיחה. לפני שנמשיך, נשמח לראות איך אתם מול החומר של קורסי הגמר במסלול ביטוח אלמנטרי, לפי תכנית הבחינות לרישיון סוכן ביטוח כללי של רשות שוק ההון.</p>
+  <p class="lead">שלום טל, תודה על השיחה. לפני שנמשיך, נשמח לראות איך אתה מול החומר של קורסי הגמר במסלול ביטוח אלמנטרי, לפי תכנית הבחינות לרישיון סוכן ביטוח כללי של רשות שוק ההון.</p>
   <div class="rules">
     <div><b>60 דקות</b><span>הזמן מתחיל בלחיצה על "התחלת המבחן"</span></div>
     <div><b>3 חלקים</b><span>20 אמריקאיות, 3 חישובים, 3 שאלות הסבר</span></div>
     <div><b>שליחה אחת</b><span>התשובות נשמרות בדפדפן עד השליחה</span></div>
   </div>
   <div class="card">
-    <label class="f" for="nm">שם מלא</label><input type="text" id="nm" autocomplete="name">
-    <label class="f" for="em">אימייל</label><input type="email" id="em" autocomplete="email" dir="ltr">
-    <p class="lead" style="margin-top:14px">אפשר לענות בלי חומרי עזר, כמו בבחינה. בשאלות ההסבר חשוב לנו גם איך אתם מסבירים, לא רק מה. כשהזמן נגמר, המבחן נשלח אוטומטית עם מה שנכתב עד אז.</p>
+    <p class="lead" style="margin-top:0">עונים בלי חומרי עזר, כמו בבחינה. בשאלות ההסבר חשוב לנו גם איך אתה מסביר, לא רק מה. כשהזמן נגמר, המבחן נשלח אוטומטית עם מה שנכתב עד אז. כדאי להתחיל כשיש לך שעה פנויה ברצף.</p>
     <button class="btn" id="go">התחלת המבחן</button>
     <div class="err" id="e1"></div>
   </div>
@@ -104,7 +102,7 @@ footer{color:var(--mute);font-size:13px;text-align:center;margin-top:40px}
   <div class="done">
     <div class="ok">✓</div>
     <h1 style="margin-top:0">המבחן התקבל</h1>
-    <p class="lead">תודה רבה. הצוות המקצועי יעבור על התשובות ונחזור אליכם בקרוב.</p>
+    <p class="lead">תודה רבה, טל. הצוות המקצועי יעבור על התשובות ונחזור אליך בקרוב.</p>
   </div>
 </section>
 <footer>INFINIX · המכללה לשוק ההון והביטוח</footer>
@@ -187,10 +185,7 @@ async function submit(auto) {
 }
 
 $("go").addEventListener("click", () => {
-  const n = $("nm").value.trim(), m = $("em").value.trim();
-  if (n.length < 2) { $("e1").textContent = "נא למלא שם מלא"; return; }
-  if (!/^\S+@\S+\.\S+$/.test(m)) { $("e1").textContent = "נא למלא אימייל תקין"; return; }
-  S.name = n; S.email = m; S.start = Date.now(); save();
+  S.name = "עו״ד טל אמיר"; S.email = "amtalaw@gmail.com"; S.start = Date.now(); save();
   show("exam"); render(); startTimer();
 });
 $("send").addEventListener("click", () => submit(false));
